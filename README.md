@@ -27,7 +27,7 @@ cs249_Parker_Proj1
 ###Categories of Features
 
 <div align="center">
-<img src="http://shawnhero.github.io/Graph/feature_class.png" style="height:200px" />
+<img src="http://shawnhero.github.io/Graph/feature_class.png" style="max-width:50%;" />
 </div>
 
 ###Two Responses to Predict: click_bool and booking_bool
