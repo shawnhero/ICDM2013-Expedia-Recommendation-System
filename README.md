@@ -27,7 +27,7 @@ cs249_Parker_Proj1
 ###Categories of Features
 
 <div align="center">
-<img src="http://shawnhero.github.io/Graph/feature_class.png" style="width:450px" />
+<img src="http://shawnhero.github.io/Graph/feature_class.png" style="height:450px" />
 </div>
 
 ###Two Responses to Predict: click_bool and booking_bool
@@ -134,9 +134,11 @@ Furthurmore, we added two additional features[1] to improve our model precision.
 
 ##Evaluation Methods
 
-<div align = "center">
-$DCG_k = \sum\limits_{i=k}\dfrac{2^{rel_i}-1}{\log_2{i}-1}$
-</div>
+
+
+`$DCG_k = \sum\limits_{i=k}\dfrac{2^{rel_i}-1}{\log_2{i}-1}$`
+
+
 Where,  $rel_i =$ 5: for booked hotels,  1: for clicked hotels, 0: for all the rest
 
 ###Self-Evaluation
