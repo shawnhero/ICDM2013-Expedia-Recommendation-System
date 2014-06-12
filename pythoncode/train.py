@@ -51,7 +51,8 @@ def feature_eng(train):
 
 
 
-def main(sample_size = int(sys.argv[1])):
+def main():
+    sample_size = int(sys.argv[1])
     train = data_io.read_train()
     print("Data Size:")
     print(train.shape)
