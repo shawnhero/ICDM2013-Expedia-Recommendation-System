@@ -1,13 +1,22 @@
 import sys
 import data_io
+import model
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from datetime import datetime
 
+
 def get_features(train, isBook=True):
     feature_names = list(train.columns)[:27]
+
+    if "comp1_rate" in feature_names:
+        ## only true in the test set
+        feature_names.remove("comp1_rate")
+    if "position" in feature_names:
+        ## only true in the training set
+        feature_names.remove("position")
+
     feature_names.remove("date_time")
-    feature_names.remove("position")
     feature_names.remove("srch_id")
     feature_names.remove("visitor_hist_starrating")
     if isBook:
@@ -47,10 +56,6 @@ def feature_eng(train):
     for i in range(2,9):
         train['comp_inv_sum'] += train['comp'+str(i)+'_inv']
 
-
-
-
-
 def main():
     sample_size = int(sys.argv[1])
     train = data_io.read_train()
@@ -76,11 +81,7 @@ def main():
         print("Using "+str(len(feature_names))+" features...")
         features = train_sample[feature_names].values
         target = train_sample[response_name].values
-        classifier = RandomForestClassifier(n_estimators=50, 
-                                            verbose=2,
-                                            n_jobs=1,
-                                            min_samples_split=10,
-                                            random_state=1)
+        classifier = model.model()
         classifier.fit(features, target)
         # print the time interval
         print("Time used,")
