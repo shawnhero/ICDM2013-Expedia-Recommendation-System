@@ -1,7 +1,7 @@
 {
-    "model_path_book":      "./book_model.pickle",
-    "model_path_click":      "./click_model.pickle",
-    "submission_path": "./submission.csv",
+    "model_path_book":      "../../saved_model/book_model.pickle",
+    "model_path_click":      "../../saved_model/click_model.pickle",
+    "submission_path": "../../results/submission.csv",
     "train_path":      "../../data/train.csv",
     "test_path":       "../../data/test.csv"
 }
