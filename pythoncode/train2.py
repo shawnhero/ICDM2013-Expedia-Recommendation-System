@@ -58,7 +58,7 @@ def feature_eng(train):
         train['comp_inv_sum'] += train['comp'+str(i)+'_inv']
 
 def main():
-	sample_size = int(sys.argv[1])
+    sample_size = int(sys.argv[1])
     ## sample_size = int(1000)
     train = data_io.read_train()
     print("Data Size:")
